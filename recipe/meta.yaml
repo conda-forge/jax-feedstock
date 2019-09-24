@@ -25,6 +25,7 @@ requirements:
     - protobuf >=3.6.0
     - six
     - jaxlib
+    - fastcache
 
 test:
   imports:
