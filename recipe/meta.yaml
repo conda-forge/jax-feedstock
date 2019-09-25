@@ -9,7 +9,7 @@ source:
   sha256: 9a77f37ac12410f52687daebe9b475eaca2f21d594a8cba20b87238bf36a1668
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: "{{ PYTHON }} -m pip install . --no-deps -vv"
 
@@ -25,6 +25,7 @@ requirements:
     - protobuf >=3.6.0
     - six
     - jaxlib
+    - fastcache
 
 test:
   imports:
