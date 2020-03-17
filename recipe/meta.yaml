@@ -1,4 +1,4 @@
-{% set version = "0.1.59" %}
+{% set version = "0.1.60" %}
 
 package:
   name: jax
@@ -6,12 +6,12 @@ package:
 
 source:
   url: https://pypi.io/packages/source/j/jax/jax-{{ version }}.tar.gz
-  sha256: 07f454484999cab00f96b2ad772beb731b347de2e3701c1c915f38a925e2950d
+  sha256: bb2b2dc3e9a5875162a80b15674d98dc4c7364079b33274f655d82f45a4a52b4
 
 build:
   number: 0
   noarch: python
-  script: "{{ PYTHON }} -m pip install . --no-deps -vv"
+  script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
   host:
@@ -47,7 +47,7 @@ about:
   license: Apache-2.0
   license_family: APACHE
   license_file: LICENSE
-  summary: "Differentiate, compile, and transform Numpy code"
+  summary: Differentiate, compile, and transform Numpy code
 
 extra:
   recipe-maintainers:
