@@ -28,19 +28,10 @@ requirements:
     - fastcache
 
 test:
-  imports:
-    # these tests imports jaxlib which is a Google non-compliant manylinux1 wheel.
-    # - jax
-    # - jax.experimental
-    # - jax.interpreters
-    # - jax.lax
-    # - jax.lib
-    # - jax.numpy
-    # - jax.ops
-    # - jax.scipy
-    # - jax.scipy.stats
-    # - jax.tools
-    - numpy  # dummy
+  requires:
+    - pip
+  commands:
+    - pip check
 
 about:
   home: https://github.com/google/jax
