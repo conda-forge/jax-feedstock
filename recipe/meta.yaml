@@ -1,4 +1,4 @@
-{% set version = "0.1.66" %}
+{% set version = "0.1.67" %}
 
 package:
   name: jax
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/j/jax/jax-{{ version }}.tar.gz
-  sha256: b384933ebd00c73f697faf3b81047e33bb16c2f835b6c645ebb072b0a9e1e6a9
+  sha256: aec8fe6e7996ba82e6aa962fd26c299169dc09fbd3f9a74e59da2d47d1e623af
 
 build:
   number: 0
@@ -28,19 +28,10 @@ requirements:
     - fastcache
 
 test:
-  imports:
-    # these tests imports jaxlib which is a Google non-compliant manylinux1 wheel.
-    # - jax
-    # - jax.experimental
-    # - jax.interpreters
-    # - jax.lax
-    # - jax.lib
-    # - jax.numpy
-    # - jax.ops
-    # - jax.scipy
-    # - jax.scipy.stats
-    # - jax.tools
-    - numpy  # dummy
+  requires:
+    - pip
+  commands:
+    - pip check
 
 about:
   home: https://github.com/google/jax
