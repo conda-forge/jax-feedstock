@@ -1,4 +1,4 @@
-{% set version = "0.1.70" %}
+{% set version = "0.1.71" %}
 
 package:
   name: jax
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/j/jax/jax-{{ version }}.tar.gz
-  sha256: 76e653cc09166d4073cdf85afb18d33b662c0e7c344d49bdb52b5837fa01a4ad
+  sha256: dd8d576015cb12a15f77e9a452ae25881d93794327c8ea14187be8660227a7d2
 
 build:
   number: 0
