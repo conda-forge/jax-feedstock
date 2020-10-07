@@ -5,11 +5,9 @@ Home: https://github.com/google/jax
 
 Package license: Apache-2.0
 
-Feedstock license: BSD-3-Clause
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/jax-feedstock/blob/master/LICENSE.txt)
 
 Summary: Differentiate, compile, and transform Numpy code
-
-
 
 Current build status
 ====================
