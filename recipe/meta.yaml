@@ -9,29 +9,30 @@ source:
   sha256: 9769f510b6c331253a88068d62a42cb4d1b53f7e7674b458b517c0ce2a136976
 
 build:
-  number: 0
+  number: 1
   noarch: python
-  script: {{ PYTHON }} -m pip install . --no-deps -vv
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
-    - python >=3.7
+    - python >=3.6
     - pip
   run:
-    - python >=3.7
+    - python >=3.6
     - absl-py
     - numpy >=1.12
     - opt_einsum
-    - protobuf >=3.6.0
-    - six
+    # Not declared in the metadata but essential to this package.
     - jaxlib
-    - fastcache
 
 test:
-  requires:
-    - pip
+  imports:
+    - jax
+    - jax._src
   commands:
     - pip check
+  requires:
+    - pip
 
 about:
   home: https://github.com/google/jax
