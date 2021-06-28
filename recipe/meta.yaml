@@ -9,7 +9,7 @@ source:
   sha256: 75ea35f48c989bb0d81570b865e5bb60c4d4eb7f40924edf9d7860bb8a93de81
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
@@ -20,7 +20,7 @@ requirements:
   run:
     - python >=3.6
     - absl-py
-    - numpy >=1.12
+    - numpy >=1.17
     - opt_einsum
     # Not declared in the metadata but essential to this package.
     - jaxlib
