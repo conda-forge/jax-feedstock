@@ -1,4 +1,4 @@
-{% set version = "0.2.22" %}
+{% set version = "0.2.24" %}
 
 package:
   name: jax
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/j/jax/jax-{{ version }}.tar.gz
-  sha256: ec0963e0b08599628f4c9a04b18b2bb9e99939cb2eb0589039daa5925f575e5c
+  sha256: ad09da2fad41121a4c0bbb15d548f4349dd0f1d6ef90fc3d7f62139c23a979bb
 
 build:
   number: 0
@@ -15,13 +15,15 @@ build:
 
 requirements:
   host:
-    - python >=3.6
+    - python >=3.7
     - pip
   run:
-    - python >=3.6
+    - python >=3.7
     - absl-py
-    - numpy >=1.17
+    - numpy >=1.18
     - opt_einsum
+    - scipy >=1.2.1
+    - typing_extensions
     # Not declared in the metadata but essential to this package.
     - jaxlib
 
