@@ -9,7 +9,7 @@ source:
   sha256: f26854ea8f5449493fadc2f70936c57b7e07b5eb91f81f710748e93e97ec785a
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
@@ -24,8 +24,9 @@ requirements:
     - opt_einsum
     - scipy >=1.2.1
     - typing_extensions
-    # Not declared in the metadata but essential to this package.
-    - jaxlib
+    # We cannot get the jax.version._minimum_jaxlib_version dynamically b/c who wants to follow standard Python packaging, right?
+    # Heck, this dependency is the main one and it is not even declared in the metadata!!
+    - jaxlib >=0.3.0  # jax.version._minimum_jaxlib_version
 
 test:
   imports:
