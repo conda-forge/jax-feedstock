@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/google/jax/archive/{{ name }}-v{{ version }}.tar.gz
-  sha256: 4ab4865b7007a36e2894a4aff8baf3ffeb6e51e435403c59ba9bc3f741ca3504
+  sha256: 8c2c984f6666971f8f8bc9557b8e0c2c1fd303ff4ad7de063eb9ee7020fab23e
 
 build:
   number: 0
