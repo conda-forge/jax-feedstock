@@ -27,6 +27,10 @@ requirements:
     - typing_extensions
     # Not declared in the metadata but essential to this package.
     - jaxlib
+    # new dep etils[epath] and its needs:
+    - etils
+    - importlib_resources
+    - zipp
 
 test:
   imports:
