@@ -6,7 +6,8 @@ package:
   version: {{ version }}
 
 source:
-  url: https://github.com/google/jax/archive/{{ name }}-v{{ version }}.tar.gz
+  # only pull source after PyPI release.
+  url: https://pypi.io/packages/source/j/jax/jax-{{ version }}.tar.gz
   sha256: 8c2c984f6666971f8f8bc9557b8e0c2c1fd303ff4ad7de063eb9ee7020fab23e
 
 build:
@@ -21,9 +22,9 @@ requirements:
   run:
     - python >=3.7
     - absl-py
-    - numpy >=1.18
+    - numpy >=1.19
     - opt_einsum
-    - scipy >=1.2.1
+    - scipy >=1.5
     - typing_extensions
     # Not declared in the metadata but essential to this package.
     - jaxlib
