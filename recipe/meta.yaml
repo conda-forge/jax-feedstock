@@ -27,7 +27,8 @@ requirements:
     - scipy >=1.5
     - typing_extensions
     # Not declared in the metadata but essential to this package.
-    - jaxlib
+    # update minimum from https://github.com/google/jax/blob/main/jax/version.py#L21
+    - jaxlib >=0.3.7
     # new dep etils[epath] and its needs:
     - etils
     - importlib_resources
