@@ -8,7 +8,7 @@ package:
 source:
   # only pull source after PyPI release.
   url: https://pypi.io/packages/source/j/jax/jax-{{ version }}.tar.gz
-  sha256: 8c2c984f6666971f8f8bc9557b8e0c2c1fd303ff4ad7de063eb9ee7020fab23e
+  sha256: d5f7695ce43b7345b4a095f4733dd46336945057dbfb63e0a28eafa74c41fe62
 
 build:
   number: 1
