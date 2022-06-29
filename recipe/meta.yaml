@@ -6,11 +6,12 @@ package:
   version: {{ version }}
 
 source:
-  url: https://github.com/google/jax/archive/{{ name }}-v{{ version }}.tar.gz
-  sha256: 8c2c984f6666971f8f8bc9557b8e0c2c1fd303ff4ad7de063eb9ee7020fab23e
+  # only pull source after PyPI release.
+  url: https://pypi.io/packages/source/j/jax/jax-{{ version }}.tar.gz
+  sha256: d5f7695ce43b7345b4a095f4733dd46336945057dbfb63e0a28eafa74c41fe62
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
@@ -21,12 +22,13 @@ requirements:
   run:
     - python >=3.7
     - absl-py
-    - numpy >=1.18
+    - numpy >=1.19
     - opt_einsum
-    - scipy >=1.2.1
+    - scipy >=1.5
     - typing_extensions
     # Not declared in the metadata but essential to this package.
-    - jaxlib
+    # update minimum from https://github.com/google/jax/blob/main/jax/version.py#L21
+    - jaxlib >=0.3.7
     # new dep etils[epath] and its needs:
     - etils
     - importlib_resources
@@ -52,3 +54,4 @@ extra:
   recipe-maintainers:
     - ocefpaf
     - ericmjl
+    - ngam
