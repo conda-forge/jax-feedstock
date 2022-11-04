@@ -1,5 +1,5 @@
 {% set name = "jax" %}
-{% set version = "0.3.23" %}
+{% set version = "0.3.24" %}
 
 package:
   name: jax
@@ -8,7 +8,7 @@ package:
 source:
   # only pull source after PyPI release.
   url: https://pypi.io/packages/source/j/jax/jax-{{ version }}.tar.gz
-  sha256: bff436e15552a82c0ebdef32737043b799e1e10124423c57a6ae6118c3a7b6cd
+  sha256: 54c0002926a1898e7c7afdc2a14fbdcac04188bcaa359bc3389a30ea464a513a
 
 build:
   number: 0
@@ -21,18 +21,13 @@ requirements:
     - pip
   run:
     - python >=3.7
-    - absl-py
     - numpy >=1.20
     - opt_einsum
     - scipy >=1.5
     - typing_extensions
     # Not declared in the metadata but essential to this package.
     # update minimum from https://github.com/google/jax/blob/main/jax/version.py#L21
-    - jaxlib >=0.3.15
-    # new dep etils[epath] and its needs:
-    - etils
-    - importlib_resources
-    - zipp
+    - jaxlib >=0.3.22
 
 test:
   imports:
