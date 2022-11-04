@@ -21,18 +21,13 @@ requirements:
     - pip
   run:
     - python >=3.7
-    - absl-py
     - numpy >=1.20
     - opt_einsum
     - scipy >=1.5
     - typing_extensions
     # Not declared in the metadata but essential to this package.
     # update minimum from https://github.com/google/jax/blob/main/jax/version.py#L21
-    - jaxlib >=0.3.15
-    # new dep etils[epath] and its needs:
-    - etils
-    - importlib_resources
-    - zipp
+    - jaxlib >=0.3.22
 
 test:
   imports:
