@@ -27,7 +27,7 @@ requirements:
     - ml_dtypes >=0.0.3
     # Not declared in the metadata but essential to this package.
     # update minimum from https://github.com/google/jax/blob/main/jax/version.py#L21
-    - jaxlib >=0.4.6
+    - jaxlib >=0.4.7
 
 test:
   imports:
