@@ -21,10 +21,10 @@ requirements:
     - pip
   run:
     - python >=3.8
-    - numpy >=1.20
+    - numpy >=1.22
     - opt_einsum
     - scipy >=1.5
-    - ml_dtypes >=0.1.0
+    - ml_dtypes >=0.2.0
     # Not declared in the metadata but essential to this package.
     # update minimum from https://github.com/google/jax/blob/main/jax/version.py#L21
     - jaxlib >=0.4.11
