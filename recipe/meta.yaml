@@ -11,7 +11,7 @@ source:
   sha256: e2ca82c9bf973c2c1c01f5340a583692b31f277aa3abd0544229c1fe5fa44b02
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
@@ -22,7 +22,7 @@ requirements:
   run:
     - python >=3.9
     - numpy >=1.22
-    - opt-einsum
+    - opt_einsum
     - scipy >=1.7
     - ml_dtypes >=0.2.0
     # Not declared in the metadata but essential to this package.
