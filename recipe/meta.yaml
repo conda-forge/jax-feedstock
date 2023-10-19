@@ -11,7 +11,7 @@ source:
   sha256: e2ca82c9bf973c2c1c01f5340a583692b31f277aa3abd0544229c1fe5fa44b02
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
@@ -27,7 +27,7 @@ requirements:
     - ml_dtypes >=0.2.0
     # Not declared in the metadata but essential to this package.
     # update minimum from https://github.com/google/jax/blob/main/jax/version.py#L21
-    - jaxlib >=0.4.11
+    - jaxlib >={{ minimum_jaxlib_version }}
     - importlib_metadata >=4.6
 
 test:
@@ -38,6 +38,8 @@ test:
     - pip check
   requires:
     - pip
+    # test with the declared minimum jaxlib
+    - jaxlib ={{ minimum_jaxlib_version }}
 
 about:
   home: https://github.com/google/jax
