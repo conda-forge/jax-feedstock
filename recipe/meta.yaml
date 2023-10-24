@@ -1,5 +1,6 @@
 {% set name = "jax" %}
 {% set version = "0.4.17" %}
+{% set minimum_jaxlib_version = "0.4.14" %}
 
 package:
   name: jax
@@ -11,7 +12,7 @@ source:
   sha256: d7508a69e87835f534cb07a2f21d79cc1cb8c4cfdcf7fb010927267ef7355f1d
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
@@ -27,7 +28,7 @@ requirements:
     - ml_dtypes >=0.2.0
     # Not declared in the metadata but essential to this package.
     # update minimum from https://github.com/google/jax/blob/main/jax/version.py#L21
-    - jaxlib >=0.4.14
+    - jaxlib >={{ minimum_jaxlib_version }}
     - importlib_metadata >=4.6
 
 test:
@@ -38,6 +39,8 @@ test:
     - pip check
   requires:
     - pip
+    # test with the declared minimum jaxlib
+    - jaxlib ={{ minimum_jaxlib_version }}
 
 about:
   home: https://github.com/google/jax
