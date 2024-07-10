@@ -1,5 +1,5 @@
 {% set name = "jax" %}
-{% set version = "0.4.28" %}
+{% set version = "0.4.30" %}
 # Not declared in the metadata but essential to this package.
 # update minimum from https://github.com/google/jax/blob/main/jax/version.py
 {% set minimum_jaxlib_version = "0.4.27" %}
@@ -12,7 +12,7 @@ package:
 source:
   # only pull source after PyPI release.
   url: https://pypi.io/packages/source/j/jax/jax-{{ version }}.tar.gz
-  sha256: dcf0a44aff2e1713f0a2b369281cd5b79d8c18fc1018905c4125897cb06b37e9
+  sha256: 94d74b5b2db0d80672b61d83f1f63ebf99d2ab7398ec12b2ca0c9d1e97afe577
 
 build:
   number: 0
@@ -29,7 +29,7 @@ requirements:
     - opt-einsum
     - scipy >=1.9
     - ml_dtypes >=0.2.0
-    - jaxlib >={{ minimum_jaxlib_version }}
+    - jaxlib >=0.4.27,<=0.4.30
     - importlib_metadata >=4.6
 
 test:
