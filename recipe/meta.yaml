@@ -29,7 +29,7 @@ requirements:
     - opt-einsum
     - scipy >=1.9
     - ml_dtypes >=0.2.0
-    - jaxlib >=0.4.27,<=0.4.30
+    - jaxlib >={{ minimum_jaxlib_version }}
     - importlib_metadata >=4.6
 
 test:
