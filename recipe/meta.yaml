@@ -2,7 +2,7 @@
 {% set version = "0.4.31" %}
 # Not declared in the metadata but essential to this package.
 # update minimum from https://github.com/google/jax/blob/main/jax/version.py
-{% set minimum_jaxlib_version = "0.4.27" %}
+{% set minimum_jaxlib_version = "0.4.30" %}
 
 
 package:
@@ -29,7 +29,7 @@ requirements:
     - opt-einsum
     - scipy >=1.10
     - ml_dtypes >=0.2.0
-    - jaxlib >=0.4.30,<=0.4.31
+    - jaxlib >={{ minimum_jaxlib_version }},<={{ version }}
     - importlib_metadata >=4.6
 
 test:
@@ -41,7 +41,7 @@ test:
   requires:
     - pip
     # test with the declared minimum jaxlib
-    - jaxlib ={{ minimum_jaxlib_version }}
+    - jaxlib =={{ minimum_jaxlib_version }}
 
 about:
   home: https://github.com/google/jax
