@@ -15,13 +15,14 @@ source:
   sha256: fd2d470643a0073d822737f0788f71391656af7e62cc5b2e7995ee390ceac287
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
     - python >=3.9
+    - setuptools
     - pip
   run:
     - python >=3.9
@@ -30,7 +31,9 @@ requirements:
     - scipy >=1.10
     - ml_dtypes >=0.2.0
     - jaxlib >={{ minimum_jaxlib_version }},<={{ version }}
-    - importlib_metadata >=4.6
+    - importlib-metadata >=4.6
+  run_constrained:
+    - cudnn >=9.2.1.18
 
 test:
   imports:
