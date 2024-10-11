@@ -15,20 +15,20 @@ source:
   sha256: fd2d470643a0073d822737f0788f71391656af7e62cc5b2e7995ee390ceac287
 
 build:
-  number: 1
+  number: 2
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
-    - python >=3.9
+    - python >=3.10
     - setuptools
     - pip
   run:
-    - python >=3.9
-    - numpy >=1.24
+    - python >=3.10
+    - numpy >=1.26
     - opt-einsum
-    - scipy >=1.10
+    - scipy >=1.11.1
     - ml_dtypes >=0.2.0
     - jaxlib >={{ minimum_jaxlib_version }},<={{ version }}
     - importlib-metadata >=4.6
