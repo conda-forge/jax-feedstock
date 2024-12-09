@@ -1,3 +1,4 @@
+{% set python_min = '3.10' %}
 {% set name = "jax" %}
 {% set version = "0.4.35" %}
 # Not declared in the metadata but essential to this package.
@@ -11,21 +12,21 @@ package:
 
 source:
   # only pull source after PyPI release.
-  url: https://pypi.io/packages/source/j/jax/jax-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/j/jax/jax-{{ version }}.tar.gz
   sha256: c0c986993026b10bf6f607fecb7417377460254640766ce40f1fef3fd139c12e
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
-    - python >=3.10
+    - python {{ python_min }}
     - setuptools
     - pip
   run:
-    - python >=3.10
+    - python >={{ python_min }}
     - numpy >=1.24
     - opt-einsum
     - scipy >=1.10
@@ -45,6 +46,7 @@ test:
     - pip
     # test with the declared minimum jaxlib
     - jaxlib =={{ minimum_jaxlib_version }}
+    - python {{ python_min }}
 
 about:
   home: https://github.com/google/jax
