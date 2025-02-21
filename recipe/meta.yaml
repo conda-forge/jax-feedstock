@@ -31,7 +31,7 @@ requirements:
     - opt_einsum
     - scipy >=1.10
     - ml_dtypes >=0.4.0
-    - jaxlib ==0.4.36
+    - jaxlib >={{ minimum_jaxlib_version }},<={{ version }}
     - importlib-metadata >=4.6
   run_constrained:
     - cudnn >=9.2.1.18
@@ -53,7 +53,7 @@ about:
   license: Apache-2.0
   license_family: APACHE
   license_file: LICENSE
-  summary: Differentiate, compile, and transform Numpy code
+  summary: Composable transformations of Python+NumPy programs: differentiate, vectorize, JIT to GPU/TPU, and more
 
 extra:
   recipe-maintainers:
