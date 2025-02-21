@@ -53,7 +53,7 @@ about:
   license: Apache-2.0
   license_family: APACHE
   license_file: LICENSE
-  summary: Composable transformations of Python+NumPy programs: differentiate, vectorize, JIT to GPU/TPU, and more
+  summary: Differentiate, compile, and transform Numpy code
 
 extra:
   recipe-maintainers:
