@@ -3,11 +3,13 @@ About jax-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/jax-feedstock/blob/main/LICENSE.txt)
 
-Home: https://github.com/google/jax
+Home: https://github.com/jax-ml/jax
 
 Package license: Apache-2.0
 
 Summary: Differentiate, compile, and transform Numpy code
+
+Development: http://github.com/jax-ml/jax
 
 Current build status
 ====================
@@ -143,6 +145,7 @@ In order to produce a uniquely identifiable distribution:
 Feedstock Maintainers
 =====================
 
+* [@conda-forge/jaxlib](https://github.com/orgs/conda-forge/teams/jaxlib/)
 * [@ehfd](https://github.com/ehfd/)
 * [@ericmjl](https://github.com/ericmjl/)
 * [@ngam](https://github.com/ngam/)
