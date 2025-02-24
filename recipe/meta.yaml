@@ -49,11 +49,12 @@ test:
     - python {{ python_min }}
 
 about:
-  home: https://github.com/google/jax
+  home: https://github.com/jax-ml/jax
   license: Apache-2.0
   license_family: APACHE
   license_file: LICENSE
   summary: Differentiate, compile, and transform Numpy code
+  dev_url: http://github.com/jax-ml/jax
 
 extra:
   recipe-maintainers:
