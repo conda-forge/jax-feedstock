@@ -2,7 +2,7 @@
 {% set name = "jax" %}
 {% set version = "0.4.36" %}
 # Not declared in the metadata but essential to this package.
-# Update _minimum_jaxlib_version from https://github.com/google/jax/blob/main/jax/version.py
+# Update _minimum_jaxlib_version from https://github.com/jax-ml/jax/blob/main/jax/version.py
 {% set minimum_jaxlib_version = "0.4.36" %}
 
 package:
