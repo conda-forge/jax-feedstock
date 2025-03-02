@@ -2,16 +2,15 @@
 {% set name = "jax" %}
 {% set version = "0.4.38" %}
 # Not declared in the metadata but essential to this package.
-# update minimum from https://github.com/google/jax/blob/main/jax/version.py
-{% set minimum_jaxlib_version = "0.4.34" %}
-
+# Update from _minimum_jaxlib_version in https://github.com/jax-ml/jax/blob/main/jax/version.py
+{% set minimum_jaxlib_version = "0.4.38" %}
 
 package:
   name: jax
   version: {{ version }}
 
 source:
-  # only pull source after PyPI release.
+  # Only pull source after PyPI release
   url: https://pypi.org/packages/source/j/jax/jax-{{ version }}.tar.gz
   sha256: 43bae65881628319e0a2148e8f81a202fbc2b8d048e35c7cb1df2416672fa4a8
 
@@ -24,17 +23,18 @@ requirements:
   host:
     - python {{ python_min }}
     - setuptools
+    - wheel
     - pip
   run:
-    - opt_einsum
     - python >={{ python_min }}
     - numpy >=1.24
-    - opt-einsum
+    - opt_einsum
     - scipy >=1.10
     - ml_dtypes >=0.4.0
-    - jaxlib >=0.4.38,<=0.4.38
+    - jaxlib >={{ minimum_jaxlib_version }},<={{ version }}
     - importlib-metadata >=4.6
   run_constrained:
+    # https://github.com/jax-ml/jax/blob/main/jax_plugins/cuda/plugin_setup.py
     - cudnn >=9.2.1.18
 
 test:
@@ -45,19 +45,22 @@ test:
     - pip check
   requires:
     - pip
-    # test with the declared minimum jaxlib
+    # Test with the declared minimum jaxlib
     - jaxlib =={{ minimum_jaxlib_version }}
     - python {{ python_min }}
 
 about:
-  home: https://github.com/google/jax
+  home: https://github.com/jax-ml/jax
   license: Apache-2.0
   license_family: APACHE
   license_file: LICENSE
   summary: Differentiate, compile, and transform Numpy code
+  dev_url: http://github.com/jax-ml/jax
 
 extra:
   recipe-maintainers:
     - ocefpaf
     - ericmjl
     - ngam
+    - ehfd
+    - conda-forge/jaxlib
