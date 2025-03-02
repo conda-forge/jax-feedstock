@@ -2,15 +2,15 @@
 {% set name = "jax" %}
 {% set version = "0.5.1" %}
 # Not declared in the metadata but essential to this package.
-# Update _minimum_jaxlib_version from https://github.com/jax-ml/jax/blob/main/jax/version.py
-{% set minimum_jaxlib_version = "0.4.36" %}
+# Update from _minimum_jaxlib_version in https://github.com/jax-ml/jax/blob/main/jax/version.py
+{% set minimum_jaxlib_version = "0.5.1" %}
 
 package:
   name: jax
   version: {{ version }}
 
 source:
-  # only pull source after PyPI release.
+  # Only pull source after PyPI release
   url: https://pypi.org/packages/source/j/jax/jax-{{ version }}.tar.gz
   sha256: c098f74846ee718165bbfa83521ae10cd52cf50b47f043f8b33a6cfd3c20ddfd
 
@@ -34,7 +34,8 @@ requirements:
     - jaxlib >=0.5.1,<=0.5.1
     - importlib-metadata >=4.6
   run_constrained:
-    - cudnn >=9.2.1.18
+    # https://github.com/jax-ml/jax/blob/main/jax_plugins/cuda/plugin_setup.py
+    - cudnn >=9.2.1.18,<10.0
 
 test:
   imports:
@@ -44,7 +45,7 @@ test:
     - pip check
   requires:
     - pip
-    # test with the declared minimum jaxlib
+    # Test with the declared minimum jaxlib
     - jaxlib =={{ minimum_jaxlib_version }}
     - python {{ python_min }}
 
