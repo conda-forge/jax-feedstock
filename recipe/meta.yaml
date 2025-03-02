@@ -2,9 +2,8 @@
 {% set name = "jax" %}
 {% set version = "0.4.37" %}
 # Not declared in the metadata but essential to this package.
-# update minimum from https://github.com/google/jax/blob/main/jax/version.py
-{% set minimum_jaxlib_version = "0.4.34" %}
-
+# Update _minimum_jaxlib_version from https://github.com/jax-ml/jax/blob/main/jax/version.py
+{% set minimum_jaxlib_version = "0.4.36" %}
 
 package:
   name: jax
@@ -24,15 +23,16 @@ requirements:
   host:
     - python {{ python_min }}
     - setuptools
+    - wheel
     - pip
   run:
     - opt_einsum
     - python >={{ python_min }}
     - numpy >=1.24
-    - opt-einsum
+    - opt_einsum
     - scipy >=1.10
     - ml_dtypes >=0.4.0
-    - jaxlib >=0.4.36,<=0.4.37
+    - jaxlib >={{ minimum_jaxlib_version }},<={{ version }}
     - importlib-metadata >=4.6
   run_constrained:
     - cudnn >=9.2.1.18
@@ -50,14 +50,17 @@ test:
     - python {{ python_min }}
 
 about:
-  home: https://github.com/google/jax
+  home: https://github.com/jax-ml/jax
   license: Apache-2.0
   license_family: APACHE
   license_file: LICENSE
   summary: Differentiate, compile, and transform Numpy code
+  dev_url: http://github.com/jax-ml/jax
 
 extra:
   recipe-maintainers:
     - ocefpaf
     - ericmjl
     - ngam
+    - ehfd
+    - conda-forge/jaxlib
