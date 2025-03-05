@@ -1,6 +1,6 @@
 {% set python_min = "3.10" %}
 {% set name = "jax" %}
-{% set version = "0.5.1" %}
+{% set version = "0.5.2" %}
 # Not declared in the metadata but essential to this package.
 # Update from _minimum_jaxlib_version in https://github.com/jax-ml/jax/blob/main/jax/version.py
 {% set minimum_jaxlib_version = "0.5.1" %}
@@ -12,7 +12,7 @@ package:
 source:
   # Only pull source after PyPI release
   url: https://pypi.org/packages/source/j/jax/jax-{{ version }}.tar.gz
-  sha256: c098f74846ee718165bbfa83521ae10cd52cf50b47f043f8b33a6cfd3c20ddfd
+  sha256: 2aef7d1912df329470c47ce8f2e6521c105e84aa620311494048c391235087c6
 
 build:
   number: 0
@@ -31,7 +31,7 @@ requirements:
     - opt_einsum
     - scipy >=1.11.1
     - ml_dtypes >=0.4.0
-    - jaxlib >={{ minimum_jaxlib_version }},<={{ version }}
+    - jaxlib >=0.5.1,<=0.5.2
     - importlib-metadata >=4.6
   run_constrained:
     # https://github.com/jax-ml/jax/blob/main/jax_plugins/cuda/plugin_setup.py
