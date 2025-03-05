@@ -1,9 +1,6 @@
 {% set python_min = "3.10" %}
 {% set name = "jax" %}
 {% set version = "0.5.2" %}
-# Not declared in the metadata but essential to this package.
-# Update from _minimum_jaxlib_version in https://github.com/jax-ml/jax/blob/main/jax/version.py
-{% set minimum_jaxlib_version = "0.5.1" %}
 
 package:
   name: jax
@@ -31,6 +28,7 @@ requirements:
     - opt_einsum
     - scipy >=1.11.1
     - ml_dtypes >=0.4.0
+    # Minimum should be from _minimum_jaxlib_version in https://github.com/jax-ml/jax/blob/main/jax/version.py
     - jaxlib >=0.5.1,<=0.5.2
     - importlib-metadata >=4.6
   run_constrained:
