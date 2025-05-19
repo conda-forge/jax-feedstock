@@ -1,5 +1,5 @@
 bot:
-  inspection: update-all
+  inspection: update-grayskull
 conda_forge_output_validation: true
 github:
   branch_name: main
