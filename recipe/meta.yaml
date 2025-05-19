@@ -23,15 +23,11 @@ requirements:
     - wheel
     - pip
   run:
-    - absl-py
-    - python-flatbuffers
-    - tensorflow
-    - tensorstore
     - python >={{ python_min }}
+    - ml_dtypes >=0.4.0
     - numpy >=1.25
     - opt_einsum
     - scipy >=1.11.1
-    - ml_dtypes >=0.4.0
     # Minimum should be from _minimum_jaxlib_version in https://github.com/jax-ml/jax/blob/main/jax/version.py
     - jaxlib >=0.5.3,<=0.5.3
     - importlib-metadata >=4.6
@@ -48,7 +44,7 @@ test:
   requires:
     - pip
     # Test with the declared minimum jaxlib
-    - jaxlib ==0.5.1
+    - jaxlib ==0.5.3
     - python {{ python_min }}
 
 about:
