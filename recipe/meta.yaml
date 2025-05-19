@@ -33,7 +33,7 @@ requirements:
     - importlib-metadata >=4.6
   run_constrained:
     # https://github.com/jax-ml/jax/blob/main/jax_plugins/cuda/plugin_setup.py
-    - cudnn >=9.2.1.18,<10.0
+    - cudnn >=9.8,<10.0
 
 test:
   imports:
