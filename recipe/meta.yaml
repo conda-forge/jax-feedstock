@@ -23,21 +23,17 @@ requirements:
     - wheel
     - pip
   run:
-    - absl-py
-    - python-flatbuffers
-    - tensorflow
-    - tensorstore
     - python >={{ python_min }}
+    - importlib-metadata >=4.6
+    - ml_dtypes >=0.5.0
     - numpy >=1.25
     - opt_einsum
     - scipy >=1.11.1
-    - ml_dtypes >=0.5.0
-    # Minimum should be from _minimum_jaxlib_version in https://github.com/jax-ml/jax/blob/main/jax/version.py
+    # Change the minimum jaxlib version to _minimum_jaxlib_version in https://github.com/jax-ml/jax/blob/main/jax/version.py
     - jaxlib >=0.6.0,<=0.6.0
-    - importlib-metadata >=4.6
   run_constrained:
-    # https://github.com/jax-ml/jax/blob/main/jax_plugins/cuda/plugin_setup.py
-    - cudnn >=9.2.1.18,<10.0
+    # Change to nvidia-cudnn-* in https://github.com/jax-ml/jax/blob/main/jax_plugins/cuda/plugin_setup.py
+    - cudnn >=9.8,<10.0
 
 test:
   imports:
@@ -47,8 +43,8 @@ test:
     - pip check
   requires:
     - pip
-    # Test with the declared minimum jaxlib
-    - jaxlib ==0.5.1
+    # Change to test the declared minimum jaxlib version
+    - jaxlib ==0.6.0
     - python {{ python_min }}
 
 about:
