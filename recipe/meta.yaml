@@ -1,6 +1,6 @@
 {% set python_min = "3.10" %}
 {% set name = "jax" %}
-{% set version = "0.6.0" %}
+{% set version = "0.6.2" %}
 
 package:
   name: jax
@@ -9,7 +9,7 @@ package:
 source:
   # Only pull source after PyPI release
   url: https://pypi.org/packages/source/j/jax/jax-{{ version }}.tar.gz
-  sha256: abc690c530349ce470eeef92e09a7bd8a0460424b4980bc72feea45332a636bf
+  sha256: a437d29038cbc8300334119692744704ca7941490867b9665406b7f90665cd96
 
 build:
   number: 0
@@ -26,11 +26,11 @@ requirements:
     - python >={{ python_min }}
     - importlib-metadata >=4.6
     - ml_dtypes >=0.5.0
-    - numpy >=1.25
+    - numpy >=1.26
     - opt_einsum
-    - scipy >=1.11.1
+    - scipy >=1.12
     # Change the minimum jaxlib version to _minimum_jaxlib_version in https://github.com/jax-ml/jax/blob/main/jax/version.py
-    - jaxlib >=0.6.0,<=0.6.0
+    - jaxlib >=0.6.2,<=0.6.2
   run_constrained:
     # Change to nvidia-cudnn-* in https://github.com/jax-ml/jax/blob/main/jax_plugins/cuda/plugin_setup.py
     - cudnn >=9.8,<10.0
