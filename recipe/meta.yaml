@@ -44,7 +44,7 @@ test:
   requires:
     - pip
     # Change to test the declared minimum jaxlib version
-    - jaxlib ==0.9.2
+    - jaxlib ==0.10.1
     - python {{ python_min }}
 
 about:
