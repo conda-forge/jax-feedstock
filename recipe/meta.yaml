@@ -1,4 +1,4 @@
-{% set python_min = "3.11" %}
+{% set python_min = "3.12" %}
 {% set name = "jax" %}
 {% set version = "0.11.2" %}
 
